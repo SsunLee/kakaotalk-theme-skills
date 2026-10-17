@@ -1,0 +1,4 @@
+interface:
+  display_name: "카카오톡 테마 제작"
+  short_description: "원화부터 설치 파일·미리보기·배포 ZIP까지 제작하고 검사합니다"
+  default_prompt: "$kakaotalk-theme-builder 기존 원화를 확인하고 아이폰·안드로이드 카카오톡 테마와 미리보기를 만들어 주세요."

@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "slug": "little-rabbit",
+  "name": "작은 토끼의 하루",
+  "author": "제작자명",
+  "description": "크림색 바탕에 작은 토끼를 그린 카카오톡 테마입니다.",
+  "package": "com.example.littlerabbit",
+  "version": "1.0.0",
+  "platforms": [
+    "ios",
+    "android"
+  ],
+  "files": {
+    "ios": "dist/little-rabbit.ktheme",
+    "android": "dist/little-rabbit.apk"
+  },
+  "previews": [
+    "previews/01-cover.png",
+    "previews/02-lock.png",
+    "previews/03-installation.png",
+    "previews/04-tabs.png",
+    "previews/05-bubbles.png",
+    "previews/06-chat.png",
+    "previews/07-friends.png"
+  ],
+  "guides": [
+    "guides/installation.txt",
+    "guides/usage.txt"
+  ],
+  "review": {
+    "preview_kind": "rendered",
+    "kakaotalk_tested": false,
+    "notes": "실제 확인 범위를 여기에 적습니다."
+  }
+}

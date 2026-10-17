@@ -1,0 +1,4 @@
+interface:
+  display_name: "카카오톡 테마 업로드"
+  short_description: "리틀리·포스타입·원스토어 등록 자료와 가격·공개 범위를 관리합니다"
+  default_prompt: "$kakaotalk-theme-publisher 완성된 테마의 플랫폼별 판매 조건을 확인하고 승인된 업로드를 진행해 주세요."
