@@ -13,7 +13,7 @@ Codex와 Claude Code 등 **Agent Skills를 읽는 AI 코딩 도구용 스킬 모
 
 | 스킬 | 하는 일 |
 |---|---|
-| [`kakaotalk-theme-builder`](skills/kakaotalk-theme-builder/SKILL.md) | 원화와 디자인을 리소스로 구현하고 iOS·Android 파일, 미리보기, 배포 ZIP을 제작·검수합니다. |
+| [`kakaotalk-theme-builder`](skills/kakaotalk-theme-builder/SKILL.md) | 원화와 디자인을 리소스로 구현하고 iOS·Android 파일, 미리보기, HTML 보관함과 배포 ZIP을 제작·검수합니다. |
 | [`kakaotalk-theme-publisher`](skills/kakaotalk-theme-publisher/SKILL.md) | 리틀리·포스타입·원스토어별 가격과 공개 범위를 준비하고 승인된 업로드를 진행합니다. |
 
 > **시작하기 전에**
@@ -74,6 +74,7 @@ $kakaotalk-theme-builder
 테마 이름은 ‘작은 토끼의 하루’입니다.
 작업 폴더는 ./work/little-rabbit 입니다.
 기존 원화를 먼저 확인하고, 미리보기 7장과 설치 안내, 배포 ZIP까지 준비해 주세요.
+HTML 테마 보관함으로 미리보기를 보여 주세요.
 ```
 
 Claude Code에서는 첫 줄을 `/kakaotalk-theme-builder`로 바꿉니다.
@@ -102,6 +103,7 @@ $kakaotalk-theme-publisher
 ├── ios/                    iOS CSS와 이미지
 ├── android/                Android 소스와 리소스
 ├── previews/               전체·채팅·말풍선 등 미리보기 7장
+├── gallery/                HTML 보관함 예시 위치 (기존 보관함이 있으면 그 구조 사용)
 ├── guides/                 설치·이용 안내
 ├── qa/                     빌드와 검수 기록
 ├── dist/                   .ktheme, .apk, 구매용 ZIP
@@ -125,6 +127,7 @@ $kakaotalk-theme-publisher
 | iOS `.ktheme` | 완성한 CSS·이미지 폴더를 검증하고 패키징합니다. |
 | Android `.apk` | 단순 Java 프로젝트용 SDK 빌더를 제공합니다. JDK·SDK·서명키가 필요합니다. Kotlin·AndroidX 프로젝트는 기존 빌드를 사용합니다. |
 | 미리보기 | 에이전트가 설치 리소스로 제작하고 직접 검토합니다. 7장 이상 파일·크기 검사는 도구가 수행합니다. |
+| HTML 보관함 | 에이전트가 테마 모음과 상세 미리보기를 구성합니다. 기존 보관함이 있으면 해당 구조를 따릅니다. 사용 가능한 Sites·아티팩트도 필요에 맞게 추천합니다. |
 | 리틀리·포스타입·원스토어 | 플랫폼별 절차와 자료·상태 기록 도구를 제공합니다. 실제 업로드는 연결된 브라우저에서 수행합니다. |
 | 업로드 재개 | 상품 ID·시도·관찰 근거를 기록하며, 불명확한 최종 요청을 확인 없이 반복하지 않도록 합니다. |
 | 기기 적용 검증 | 파일 검사와 별도로 수행합니다. 실제 확인하지 않은 카카오톡 적용을 성공으로 표시하지 않습니다. |
