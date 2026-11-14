@@ -2,6 +2,7 @@
 """Install the two skills locally. No network, credentials or package installation."""
 import argparse
 import hashlib
+import importlib.util
 import json
 import os
 import shutil
@@ -114,6 +115,10 @@ def main():
             assert temp.parent == base.resolve() and temp.name.startswith('.theme-install-')
             shutil.rmtree(temp)
     print('설치했습니다. 새 대화에서 스킬을 확인하세요. 표시되지 않으면 사용 중인 앱을 다시 시작하세요.')
+    if 'kakaotalk-theme-builder' in names and importlib.util.find_spec('PIL') is None:
+        print('참고: 길어지는 말풍선·귀여운 배경을 만들려면 이미지 도구 Pillow가 필요합니다. '
+              '지금 설치하려면: "' + sys.executable + '" -m pip install --user Pillow '
+              '(나중에 AI가 필요할 때 설치를 안내합니다.)')
 
 
 if __name__ == '__main__':

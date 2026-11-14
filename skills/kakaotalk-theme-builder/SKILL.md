@@ -44,6 +44,8 @@ python scripts/background_pattern.py --spec <background.json> --project <작업�
 
 `long_bubble.py`와 `background_pattern.py`는 Pillow가 필요하다. 다른 도구는 pip 의존성이 없다.
 
+Pillow가 없으면 두 도구는 `PILLOW_MISSING` 안내와 설치 명령을 출력하고 종료 코드 3으로 끝난다. 이때 사용자가 기술 용어를 모른다고 가정하고 "말풍선·배경 이미지를 만들려면 Pillow라는 이미지 도구를 한 번 설치해야 합니다"처럼 한 문장으로 설명한다. 동의를 받은 뒤 안내된 명령(`<현재 python> -m pip install --user Pillow`)으로 설치하고 같은 도구를 다시 실행한다. 사용자가 이미 설치를 허락했으면 바로 설치한다. 설치가 실패하면 오류 요지와 다음 방법(다른 Python 사용, 관리자 권한 등)을 알린다. Pillow가 없다는 이유로 단색 배경이나 기본 말풍선으로 몰래 바꾸지 않는다.
+
 `init`은 빈 작업 틀만 만든다. 원화·CSS·Android 소스·미리보기는 에이전트가 사용자 요청과 최신 네이티브 규격에 맞춰 구현해야 한다. Android 빌더는 외부 Java 라이브러리나 Kotlin을 쓰지 않는 단순 Java 프로젝트용이다. 다른 프로젝트는 해당 프로젝트의 빌드 절차를 사용하고 결과물을 같은 파일 규격에 맞춘다.
 
 ## 실행과 보고
