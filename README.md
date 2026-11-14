@@ -13,7 +13,7 @@ Codex와 Claude Code 등 **Agent Skills를 읽는 AI 코딩 도구용 스킬 모
 
 | 스킬 | 하는 일 |
 |---|---|
-| [`kakaotalk-theme-builder`](skills/kakaotalk-theme-builder/SKILL.md) | 원화와 디자인을 리소스로 구현하고 iOS·Android 파일, 미리보기, HTML 보관함과 배포 ZIP을 제작·검수합니다. |
+| [`kakaotalk-theme-builder`](skills/kakaotalk-theme-builder/SKILL.md) | 원화와 디자인을 리소스로 구현하고 iOS·Android 파일, 미리보기, HTML 보관함과 배포 ZIP을 제작·검수합니다. 캐릭터 몸통이 늘어나는 **길어지는 스타일 말풍선**과 파스텔 물방울·하트·구름 하늘 같은 **귀여운 배경**을 만들 수 있습니다. |
 | [`kakaotalk-theme-publisher`](skills/kakaotalk-theme-publisher/SKILL.md) | 리틀리·포스타입·원스토어별 가격과 공개 범위를 준비하고 승인된 업로드를 진행합니다. |
 
 > **시작하기 전에**
@@ -21,6 +21,29 @@ Codex와 Claude Code 등 **Agent Skills를 읽는 AI 코딩 도구용 스킬 모
 > 스킬은 AI가 따라야 할 작업 지침과 Python 보조 도구입니다. 이미지 제작에는 사용자 원화 또는 이미지 생성 도구가, Android 빌드에는 JDK·Android SDK·본인 서명키가 필요합니다. 실제 업로드에는 본인 판매자 계정과 AI 환경의 브라우저 제어 기능이 필요합니다. 설치 프로그램은 계정 로그인이나 상품 발행을 실행하지 않습니다.
 
 ## 빠른 설치
+
+| 사용하는 도구 | 가장 쉬운 방법 |
+|---|---|
+| Claude Code | 플러그인으로 설치합니다. 아래 **Claude Code 플러그인**을 보세요. |
+| Codex | `$skill-installer`에 저장소 주소를 알려 줍니다. 아래 **방법 2**를 보세요. |
+| 둘 다 / 다른 Agent Skills 도구 | 저장소를 받아 `install.py`로 설치합니다. 아래 **방법 1**을 보세요. |
+
+### Claude Code 플러그인
+
+Claude Code 안에서 다음을 입력합니다.
+
+```text
+/plugin install kakaotalk-theme-skills --marketplace SsunLee/kakaotalk-theme-skills
+```
+
+이전 버전의 Claude Code라면 두 단계로 설치합니다.
+
+```text
+/plugin marketplace add SsunLee/kakaotalk-theme-skills
+/plugin install kakaotalk-theme-skills@kakaotalk-theme-skills
+```
+
+플러그인으로 설치한 스킬은 `/kakaotalk-theme-skills:kakaotalk-theme-builder`처럼 플러그인 이름이 앞에 붙습니다. 업데이트는 `/plugin marketplace update kakaotalk-theme-skills`로 합니다.
 
 ### 방법 1. 저장소를 내려받아 설치하기
 
@@ -77,7 +100,14 @@ $kakaotalk-theme-builder
 HTML 테마 보관함으로 미리보기를 보여 주세요.
 ```
 
-Claude Code에서는 첫 줄을 `/kakaotalk-theme-builder`로 바꿉니다.
+Claude Code에서는 첫 줄을 `/kakaotalk-theme-builder`로 바꿉니다. 플러그인으로 설치했다면 `/kakaotalk-theme-skills:kakaotalk-theme-builder`입니다.
+
+말풍선과 배경은 이렇게 요청할 수 있습니다.
+
+```text
+말풍선은 길어지는 스타일로 해 주세요. 강아지 몸통이 글 길이만큼 늘어나게요.
+배경은 귀엽게, 파스텔 물방울이나 구름 하늘 느낌으로 몇 가지 보여 주세요.
+```
 원화가 없으면 사용할 수 있는 이미지 생성 도구와 원하는 스타일을 함께 알려주세요.
 
 ### 완성된 테마 업로드
@@ -126,6 +156,8 @@ $kakaotalk-theme-publisher
 | 원화·테마 디자인 | AI 작업 지침을 제공합니다. 원화나 이미지 생성 도구는 사용자가 준비합니다. |
 | iOS `.ktheme` | 완성한 CSS·이미지 폴더를 검증하고 패키징합니다. |
 | Android `.apk` | 단순 Java 프로젝트용 SDK 빌더를 제공합니다. JDK·SDK·서명키가 필요합니다. Kotlin·AndroidX 프로젝트는 기존 빌드를 사용합니다. |
+| 길어지는 말풍선 | 캐릭터 원화 한 장으로 iOS @3x·@2x, Android 나인패치, CSS 값을 만들고 늘어난 모습을 미리 그립니다. Pillow가 필요합니다. |
+| 귀여운 배경 | 파스텔 물방울·구름 하늘·하트·꽃·밤하늘·깅엄 등 프리셋 8종과 캐릭터 스티커 흩뿌리기를 지원하고 글자 대비를 검사합니다. Pillow가 필요합니다. |
 | 미리보기 | 에이전트가 설치 리소스로 제작하고 직접 검토합니다. 7장 이상 파일·크기 검사는 도구가 수행합니다. |
 | HTML 보관함 | 기존 보관함에 홈·시리즈·상세·전체 목록을 함께 반영합니다. 캐릭터 PNG와 설치형 테마를 구분합니다. 기존 Sites 프로젝트를 우선 갱신하며 아티팩트는 개별 시안 검토에 추천할 수 있습니다. |
 | 리틀리·포스타입·원스토어 | 플랫폼별 절차와 자료·상태 기록 도구를 제공합니다. 실제 업로드는 연결된 브라우저에서 수행합니다. |
@@ -141,7 +173,7 @@ APK 서명은 Android 빌더 또는 별도의 `apksigner` 검사로 확인해야
 
 ## 개발·기여
 
-보조 도구는 Python 표준 라이브러리를 사용합니다. 설치·패키징·오류 처리·중복 시도 방지는 다음 명령으로 검사합니다.
+패키징·업로드 도구는 Python 표준 라이브러리만 사용합니다. 말풍선·배경 이미지 도구(`long_bubble.py`, `background_pattern.py`)는 Pillow가 필요하며, Pillow가 없으면 해당 테스트는 건너뜁니다. 설치·패키징·오류 처리·중복 시도 방지는 다음 명령으로 검사합니다.
 
 ```sh
 python -m unittest discover -s tests -v

@@ -1,0 +1,19 @@
+{
+  "name": "kakaotalk-theme-skills",
+  "owner": {
+    "name": "SsunLee",
+    "url": "https://github.com/SsunLee"
+  },
+  "metadata": {
+    "description": "카카오톡 테마 제작·업로드 스킬 마켓플레이스"
+  },
+  "plugins": [
+    {
+      "name": "kakaotalk-theme-skills",
+      "source": "./",
+      "description": "카카오톡 테마 제작·검수(길어지는 말풍선, 귀여운 배경 포함)와 리틀리·포스타입·원스토어 업로드 스킬",
+      "version": "0.2.0",
+      "category": "design"
+    }
+  ]
+}

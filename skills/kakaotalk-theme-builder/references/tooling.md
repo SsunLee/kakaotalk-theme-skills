@@ -1,6 +1,6 @@
 # 도구 사용법과 파일 규격
 
-명령은 설치된 제작 스킬 폴더에서 실행한다. GitHub 저장소를 내려받아 직접 쓰면 아래 scripts/ 앞에 skills/kakaotalk-theme-builder/를 붙인다. Python 3.10 이상이며 아래 도구에는 pip 의존성이 없다.
+명령은 설치된 제작 스킬 폴더에서 실행한다. GitHub 저장소를 내려받아 직접 쓰면 아래 scripts/ 앞에 skills/kakaotalk-theme-builder/를 붙인다. Python 3.10 이상이며 theme_tools.py와 build_android.py에는 pip 의존성이 없다. 말풍선·배경 생성 도구(long_bubble.py, background_pattern.py)는 Pillow가 필요하며 사용법은 [길어지는 스타일 말풍선](long-bubble.md)과 [배경 안내](background.md)에 있다.
 
 ## 처음 시작
 
