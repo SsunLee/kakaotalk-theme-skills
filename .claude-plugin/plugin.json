@@ -1,0 +1,13 @@
+{
+  "name": "kakaotalk-theme-skills",
+  "description": "카카오톡 테마 제작·검수(길어지는 말풍선, 귀여운 배경 포함)와 리틀리·포스타입·원스토어 업로드 스킬",
+  "version": "0.2.0",
+  "author": {
+    "name": "SsunLee",
+    "url": "https://github.com/SsunLee"
+  },
+  "homepage": "https://github.com/SsunLee/kakaotalk-theme-skills",
+  "repository": "https://github.com/SsunLee/kakaotalk-theme-skills",
+  "license": "MIT",
+  "keywords": ["kakaotalk", "theme", "ktheme", "apk", "skills"]
+}

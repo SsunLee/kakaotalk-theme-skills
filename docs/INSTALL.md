@@ -2,10 +2,36 @@
 
 [← README](../README.md) · [사용법](USAGE.md)
 
+## Claude Code 플러그인으로 설치
+
+Claude Code 안에서 입력합니다.
+
+```text
+/plugin install kakaotalk-theme-skills --marketplace SsunLee/kakaotalk-theme-skills
+```
+
+`--marketplace` 옵션이 없는 이전 버전이라면 `/plugin marketplace add SsunLee/kakaotalk-theme-skills` 후 `/plugin install kakaotalk-theme-skills@kakaotalk-theme-skills`를 실행합니다. 두 스킬이 함께 설치되고 `/kakaotalk-theme-skills:kakaotalk-theme-builder`처럼 호출합니다. 업데이트는 `/plugin marketplace update kakaotalk-theme-skills`, 삭제는 `/plugin uninstall kakaotalk-theme-skills`입니다.
+
+플러그인과 `install.py --target claude`를 둘 다 설치하면 같은 스킬이 두 번 보입니다. 하나만 사용하세요.
+
+## Codex에 설치 요청하기
+
+Codex에 다음을 붙여 넣으면 내장 `$skill-installer`가 GitHub에서 설치합니다.
+
+```text
+$skill-installer
+https://github.com/SsunLee/kakaotalk-theme-skills 저장소에서
+skills/kakaotalk-theme-builder와
+skills/kakaotalk-theme-publisher를 설치해 주세요.
+```
+
+아래는 저장소를 내려받아 `install.py`로 설치하는 방법입니다. Codex와 Claude Code를 모두 쓰거나 다른 Agent Skills 도구에 설치할 때 사용합니다.
+
 ## 준비할 것
 
 - 스킬을 읽을 수 있는 Codex 또는 Claude Code.
-- 설치 스크립트를 쓰려면 Python 3.10 이상. 별도의 pip 설치는 필요하지 않습니다.
+- 설치 스크립트를 쓰려면 Python 3.10 이상. 설치 자체에는 pip 설치가 필요하지 않습니다.
+- 길어지는 말풍선·귀여운 배경 도구를 쓸 때만 Pillow가 필요합니다: `python -m pip install Pillow`.
 - 원화 생성·Android 빌드·웹 업로드에 필요한 도구는 해당 작업을 할 때 준비합니다. 스킬 설치만으로 SDK나 판매자 계정이 생기지는 않습니다.
 
 ## 저장소 받기
