@@ -160,5 +160,22 @@ class BackgroundTest(unittest.TestCase):
         self.assertIn('preset must be one of', result.stdout + result.stderr)
 
 
+
+class MissingPillowTest(unittest.TestCase):
+    """Without Pillow both helpers must explain the install step instead of crashing."""
+
+    def test_guidance_and_exit_code(self):
+        import subprocess
+        import sys
+        for script in (LONG, BG):
+            code = ("import runpy, sys; sys.modules['PIL'] = None; sys.argv = ['tool', '--help']; "
+                    f"runpy.run_path({str(script)!r}, run_name='__main__')")
+            result = subprocess.run([sys.executable, '-c', code], capture_output=True,
+                                    encoding='utf-8', errors='replace', stdin=subprocess.DEVNULL)
+            self.assertEqual(result.returncode, 3, result.stderr)
+            self.assertIn('PILLOW_MISSING', result.stderr)
+            self.assertIn('-m pip install --user Pillow', result.stderr)
+
+
 if __name__ == '__main__':
     unittest.main()

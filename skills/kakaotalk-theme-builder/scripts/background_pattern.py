@@ -17,7 +17,13 @@ from pathlib import Path
 try:
     from PIL import Image, ImageDraw, ImageFont, ImageOps
 except ImportError:  # pragma: no cover
-    sys.exit('Pillow is required: python -m pip install Pillow')
+    if hasattr(sys.stderr, 'reconfigure'):
+        sys.stderr.reconfigure(encoding='utf-8', errors='replace')
+    sys.stderr.write(
+        'PILLOW_MISSING: 배경 생성 도구에는 이미지 처리 라이브러리 Pillow가 필요합니다.\n'
+        '설치 명령: "' + sys.executable + '" -m pip install --user Pillow\n'
+        'Pillow is required. Install it with the command above, then run this tool again.\n')
+    sys.exit(3)
 
 TARGETS = {
     'chatroom': [('ios/Images/chatroomBgImage@3x.png', 1125, 2250), ('ios/Images/chatroomBgImage@2x.png', 750, 1500),
